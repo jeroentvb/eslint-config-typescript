@@ -14,7 +14,8 @@ module.exports = {
       'sourceType': 'module'
    },
    'plugins': [
-      '@typescript-eslint'
+      '@typescript-eslint',
+      'unused-imports'
    ],
    'ignorePatterns': ['dist/', '*.d.ts'],
    'rules': {
@@ -44,6 +45,7 @@ module.exports = {
          }
       ],
       'space-before-function-paren': ['error', 'never'],
+      'unused-imports/no-unused-imports': 'warn',
       '@typescript-eslint/no-unused-vars': [
          'warn',
          {
