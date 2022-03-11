@@ -1,0 +1,31 @@
+{
+  "name": "@jeroentvb/eslint-config",
+  "version": "1.0.0",
+  "description": "Personal eslint config",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeroentvb/eslint-config.git"
+  },
+  "keywords": ["eslint", "eslintconfig"],
+  "author": "jeroentvb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeroentvb/eslint-config/issues"
+  },
+  "homepage": "https://github.com/jeroentvb/eslint-config#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/parser": "^5.12.1",
+    "eslint": "^8.9.0"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/parser": "^5.12.1",
+    "eslint": "^8.9.0"
+  }
+}
