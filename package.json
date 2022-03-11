@@ -1,7 +1,7 @@
 {
-  "name": "@jeroentvb/eslint-config",
+  "name": "@jeroentvb/eslint-config-typescript",
   "version": "1.0.0",
-  "description": "Personal eslint config",
+  "description": "Personal eslint config for typescript projects",
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jeroentvb/eslint-config.git"
+    "url": "git+https://github.com/jeroentvb/eslint-config-typescript.git"
   },
   "keywords": ["eslint", "eslintconfig"],
   "author": "jeroentvb",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jeroentvb/eslint-config/issues"
+    "url": "https://github.com/jeroentvb/eslint-config-typescript/issues"
   },
-  "homepage": "https://github.com/jeroentvb/eslint-config#readme",
+  "homepage": "https://github.com/jeroentvb/eslint-config-typescript#readme",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.12.1",
     "@typescript-eslint/parser": "^5.12.1",
