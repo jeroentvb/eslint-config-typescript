@@ -43,6 +43,7 @@ module.exports = {
             'ignoreComments': true
          }
       ],
+      'space-before-function-paren': ['error', 'never'],
       '@typescript-eslint/no-unused-vars': [
          'warn',
          {
