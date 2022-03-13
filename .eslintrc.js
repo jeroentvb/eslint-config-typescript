@@ -44,7 +44,11 @@ module.exports = {
             'ignoreComments': true
          }
       ],
-      'space-before-function-paren': ['error', 'never'],
+      'space-before-function-paren': ['error', {
+         'anonymous': 'never',
+         'named': 'never',
+         'asyncArrow': 'always'
+      }],
       'unused-imports/no-unused-imports': 'warn',
       '@typescript-eslint/no-unused-vars': [
          'warn',

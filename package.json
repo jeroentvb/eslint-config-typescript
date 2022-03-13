@@ -1,6 +1,6 @@
 {
   "name": "@jeroentvb/eslint-config-typescript",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Personal eslint config for typescript projects",
   "main": "index.js",
   "scripts": {
