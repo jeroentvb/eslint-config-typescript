@@ -2,7 +2,7 @@
   "name": "@jeroentvb/eslint-config-typescript",
   "version": "9.0.1",
   "description": "Personal eslint config for typescript projects",
-  "main": "eslint.config.js",
+  "main": "./eslint.config.js",
   "type": "module",
   "scripts": {
     "lint": "eslint .",
@@ -22,12 +22,15 @@
     "url": "https://github.com/jeroentvb/eslint-config-typescript/issues"
   },
   "homepage": "https://github.com/jeroentvb/eslint-config-typescript#readme",
-  "devDependencies": {
+  "dependencies": {
     "@eslint/js": "^9.28.0",
-    "eslint": "^9.28.0",
+    "@stylistic/eslint-plugin": "^4.4.0",
     "eslint-plugin-unused-imports": "^4.1.4",
     "globals": "^16.2.0",
     "typescript-eslint": "^8.20.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.28.0"
   },
   "peerDependencies": {
     "eslint": "^9.28.0",
