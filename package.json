@@ -2,7 +2,7 @@
   "name": "@jeroentvb/eslint-config-typescript",
   "version": "9.0.1",
   "description": "Personal eslint config for typescript projects",
-  "main": "index.js",
+  "main": "eslint.config.js",
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix"
