@@ -3,6 +3,7 @@
   "version": "9.0.1",
   "description": "Personal eslint config for typescript projects",
   "main": "eslint.config.js",
+  "type": "module",
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix"

@@ -1,5 +1,10 @@
 import ts from 'typescript-eslint';
-import unusedImports from "eslint-plugin-unused-imports";
+import unusedImports from 'eslint-plugin-unused-imports';
+
+import eslint from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import { defineConfig } from 'eslint/config';
+import globals from 'globals';
 
 export default ts.config(
    eslint.configs.recommended,
@@ -11,7 +16,7 @@ export default ts.config(
             ...globals.node,
          },
 
-         parser: tsParser,
+         parser: tseslint.parser,
          'ecmaVersion': 'latest',
          'sourceType': 'module',
          parserOptions: {},
@@ -22,29 +27,30 @@ export default ts.config(
             'SwitchCase': 1,
          }],
 
-         linebreak-style: ['error', 'unix'],
+         'linebreak-style': ['error', 'unix'],
          quotes: ['error', 'single'],
          semi: ['error', 'always'],
 
-         no-trailing-spaces: ['warn', {
+         'no-trailing-spaces': ['warn', {
             ignoreComments: true,
          }],
 
-         space-before-function-paren: ['error', {
+         'space-before-function-paren': ['error', {
             anonymous: 'never',
             named: 'never',
             asyncArrow: 'always',
          }],
 
-         unused-imports/no-unused-imports: 'warn',
+         'unused-imports/no-unused-imports': 'warn',
 
-         typescript-eslint/no-unused-vars: ['warn', {
+         'typescript-eslint/no-unused-vars': ['warn', {
             argsIgnorePattern: '^_',
          }],
       },
 
       plugins: {
          'unused-imports': unusedImports,
+         'typescript-eslint': tseslint.plugin,
       },
-  })
+   })
 );
