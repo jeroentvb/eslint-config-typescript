@@ -1,67 +1,50 @@
-const {
-   defineConfig,
-   globalIgnores,
-} = require('eslint/config');
+import ts from 'typescript-eslint';
+import unusedImports from "eslint-plugin-unused-imports";
 
-const globals = require('globals');
-const tsParser = require('@typescript-eslint/parser');
-const typescriptEslint = require('@typescript-eslint/eslint-plugin');
-const unusedImports = require('eslint-plugin-unused-imports');
-const js = require('@eslint/js');
+export default ts.config(
+   eslint.configs.recommended,
+   tseslint.configs.recommended,
+   defineConfig({
+      languageOptions: {
+         globals: {
+            ...globals.browser,
+            ...globals.node,
+         },
 
-const {
-   FlatCompat,
-} = require('@eslint/eslintrc');
-
-const compat = new FlatCompat({
-   baseDirectory: __dirname,
-   recommendedConfig: js.configs.recommended,
-   allConfig: js.configs.all
-});
-
-module.exports = defineConfig([{
-   languageOptions: {
-      globals: {
-         ...globals.browser,
-         ...globals.node,
+         parser: tsParser,
+         'ecmaVersion': 'latest',
+         'sourceType': 'module',
+         parserOptions: {},
       },
 
-      parser: tsParser,
-      'ecmaVersion': 'latest',
-      'sourceType': 'module',
-      parserOptions: {},
-   },
+      rules: {
+         indent: ['error', 3, {
+            'SwitchCase': 1,
+         }],
 
-   extends: compat.extends('eslint:recommended', 'plugin:@typescript-eslint/recommended'),
+         linebreak-style: ['error', 'unix'],
+         quotes: ['error', 'single'],
+         semi: ['error', 'always'],
 
-   plugins: {
-      '@typescript-eslint': typescriptEslint,
-      'unused-imports': unusedImports,
-   },
+         no-trailing-spaces: ['warn', {
+            ignoreComments: true,
+         }],
 
-   'rules': {
-      'indent': ['error', 3, {
-         'SwitchCase': 1,
-      }],
+         space-before-function-paren: ['error', {
+            anonymous: 'never',
+            named: 'never',
+            asyncArrow: 'always',
+         }],
 
-      'linebreak-style': ['error', 'unix'],
-      'quotes': ['error', 'single'],
-      'semi': ['error', 'always'],
+         unused-imports/no-unused-imports: 'warn',
 
-      'no-trailing-spaces': ['warn', {
-         'ignoreComments': true,
-      }],
+         typescript-eslint/no-unused-vars: ['warn', {
+            argsIgnorePattern: '^_',
+         }],
+      },
 
-      'space-before-function-paren': ['error', {
-         'anonymous': 'never',
-         'named': 'never',
-         'asyncArrow': 'always',
-      }],
-
-      'unused-imports/no-unused-imports': 'warn',
-
-      '@typescript-eslint/no-unused-vars': ['warn', {
-         'argsIgnorePattern': '^_',
-      }],
-   },
-}, globalIgnores(['**/dist/', '**/*.d.ts'])]);
+      plugins: {
+         'unused-imports': unusedImports,
+      },
+  })
+);
