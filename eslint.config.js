@@ -1,15 +1,17 @@
 import ts from 'typescript-eslint';
 import unusedImports from 'eslint-plugin-unused-imports';
-
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import { defineConfig } from 'eslint/config';
 import globals from 'globals';
+import stylistic from '@stylistic/eslint-plugin';
 
 export default ts.config(
    eslint.configs.recommended,
    tseslint.configs.recommended,
    defineConfig({
+      name: 'jeroentvb/eslint-config-typescript',
+
       languageOptions: {
          globals: {
             ...globals.browser,
@@ -22,35 +24,37 @@ export default ts.config(
          parserOptions: {},
       },
 
+      plugins: {
+         'unused-imports': unusedImports,
+         'typescript-eslint': tseslint.plugin,
+         '@stylistic': stylistic
+      },
+
       rules: {
-         indent: ['error', 3, {
+         '@stylistic/indent': ['error', 3, {
             'SwitchCase': 1,
          }],
 
-         'linebreak-style': ['error', 'unix'],
-         quotes: ['error', 'single'],
-         semi: ['error', 'always'],
+         '@stylistic/linebreak-style': ['error', 'unix'],
+         '@stylistic/quotes': ['error', 'single'],
+         '@stylistic/semi': ['error', 'always'],
 
-         'no-trailing-spaces': ['warn', {
-            ignoreComments: true,
+         '@stylistic/no-trailing-spaces': ['warn', {
+            'ignoreComments': true,
          }],
 
-         'space-before-function-paren': ['error', {
-            anonymous: 'never',
-            named: 'never',
-            asyncArrow: 'always',
+         '@stylistic/space-before-function-paren': ['error', {
+            'anonymous': 'never',
+            'named': 'never',
+            'asyncArrow': 'always',
          }],
 
          'unused-imports/no-unused-imports': 'warn',
 
          'typescript-eslint/no-unused-vars': ['warn', {
-            argsIgnorePattern: '^_',
+            'varsIgnorePattern': '^_',
+            'argsIgnorePattern': '^_',
          }],
-      },
-
-      plugins: {
-         'unused-imports': unusedImports,
-         'typescript-eslint': tseslint.plugin,
       },
    })
 );
