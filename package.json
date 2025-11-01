@@ -1,6 +1,6 @@
 {
   "name": "@jeroentvb/eslint-config-typescript",
-  "version": "9.0.1",
+  "version": "9.0.2",
   "description": "Personal eslint config for typescript projects",
   "main": "./eslint.config.js",
   "type": "module",
